@@ -4,27 +4,30 @@ import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
-        // Add your code here
-        return "";
+        return Character.toUpperCase(word.charAt(0)) + word.substring(1);
     }
 
     public String generateInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
+        return Character.toUpperCase(firstName.charAt(0)) + "." + Character.toUpperCase(lastName.charAt(0));
     }
 
     public double addVat(double originalPrice, double vatRate) {
-        // Add your code here
-        return 0.0;
+        double vat = Math.round(originalPrice * vatRate);
+        return vat/100 + originalPrice;
     }
 
     public String reverse(String sentence) {
-        // Add your code here
-        return "";
+       StringBuilder sb = new StringBuilder(sentence);
+       return sb.reverse().toString();
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+        int count = 0;
+        for (User user : users) {
+            if (user.getType().equalsIgnoreCase("Linux")){
+                count++;
+            }
+        }
+        return count;
     }
 }
